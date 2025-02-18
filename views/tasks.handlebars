@@ -1,0 +1,38 @@
+<div class="main-filter-tasks-form">
+    {{> tasks-filter-form username=username}}
+</div>
+<div class="main-tasks-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+                <tr>
+                    <td>
+                        <form action="/update-task" method="post" > <!--Manage this in the front end js-->
+                            <input type="hidden" name="method" value="put">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="hidden" name="username" value="{{this.user}}">
+                            <select name="status" id="status" onchange="this.form.submit()">
+                                {{#each ../statuses}}
+                                    <option value="{{this}}" {{#ifEquals this ../this.status}} selected{{/ifEquals}}>{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </form>
+                        {{this.title}}
+                    </td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.due_date}}</td>
+                    <td>{{this.status}}</td>
+                    <td><a href="/edit-task/{{this.id}}/{{this.user}}">Edit Task</a></td>
+                    <td>{{> delete-task-form id=this.id username=this.user}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

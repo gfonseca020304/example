@@ -1,0 +1,137 @@
+/* Reset some default styles */
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header .header-nav .header-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login-submit-btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* Styling for the tasks filter form */
+.main-filter-tasks-form {
+    margin-bottom: 20px;
+}
+
+.main-filter-tasks-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-filter-tasks-form label {
+    font-weight: bold;
+}
+
+.main-filter-tasks-form input[type="text"],
+.main-filter-tasks-form select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.main-filter-tasks-form input[type="submit"] {
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.main-filter-tasks-form input[type="submit"]:hover {
+    background: #555;
+}
+
+
+/* Styling for the tasks table */
+.main-tasks-table td{
+    padding: 15px;
+}
+
+.main-tasks-table {
+    margin-top: 20px;
+}
+
+.main-tasks-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main-tasks-table th,
+.main-tasks-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.main-tasks-table th {
+    background: #333;
+    color: #fff;
+}
+
+.main-tasks-table tr:nth-child(even) {
+    background: #f4f4f4;
+}
+
+.main-tasks-table a {
+    color: #333;
+    text-decoration: none;
+}
+
+.main-tasks-table a:hover {
+    text-decoration: underline;
+}

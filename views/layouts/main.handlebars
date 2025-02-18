@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="/js/app.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        {{#if username}}
+        <nav>
+            <div class="header-nav">
+                <div class="header-nav-item">
+                    <a href="/tasks/{{username}}"><h1>Task Manager</h1></a>
+                </div>
+                <div class="header-nav-item">
+                    <div class="header-actions">
+                        <a href="/newTask/{{username}}">Add Task</a>
+                    </div>
+                    <div class="header-actions">
+                        <a href="/logout">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{/if}}
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

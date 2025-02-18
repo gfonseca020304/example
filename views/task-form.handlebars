@@ -1,0 +1,43 @@
+<form action="{{#if task}}/update-task{{else}}/addTasks{{/if}}" method="POST">
+    <input type="hidden" name="username" value="{{username}}">
+    <input type="hidden" name="id" value="{{task.id}}"> 
+    <!-- Method Field -->
+    <input type="hidden" name="method" value="{{#if task}}put{{else}}post{{/if}}">
+
+    <label for="title">Task Title:</label>
+    <input type="text" id="title" name="title" value="{{task.title}}" required>
+    
+    <label for="description">Task Description:</label>
+    <textarea id="description" name="description" required>{{task.description}}</textarea>
+    
+    <label for="due_date">Due Date:</label>
+    <input type="date" id="due_date" name="due_date" value="{{task.due_date}}" required>
+
+    <label for="status">Status:</label>
+    <select name="status" id="status">
+        {{#if task}}
+            {{#each statuses}}
+                <option value="{{this}}" {{#ifEquals this ../task.status}} selected{{/ifEquals}}>{{this}}</option>
+            {{/each}}
+        {{else}}
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        {{/if}}
+    </select>
+
+    <label for="priority">Priority:</label>
+    <select id="priority" name="priority" required>
+        {{#if task}}
+            {{#each priorities}}
+                <option value="{{this}}" {{#ifEquals this ../task.priority}} selected{{/ifEquals}}>{{this}}</option>
+            {{/each}}
+        {{else}}
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        {{/if}}
+    </select>
+    
+    <input type="submit" value="{{#if task}} Edit Task {{else}} Add Task {{/if}}">
+</form>
